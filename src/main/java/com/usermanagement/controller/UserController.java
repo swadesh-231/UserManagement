@@ -17,12 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-    @PostMapping
-    public ResponseEntity<UserResponse> registerUser(
-            @Valid @RequestBody UserRequest userRequest) {
-        UserResponse response = userService.createUser(userRequest);
-        return ResponseEntity.ok(response);
-    }
+
     @GetMapping
     public ResponseEntity<List<UserResponse>> getAllUsers() {
         return ResponseEntity.ok(userService.findAllUsers());
