@@ -54,7 +54,6 @@ public class AuthController {
         if (authentication == null || !authentication.isAuthenticated()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
-
         String username = authentication.getName();
         UserResponse response = userService.findUserByUsername(username);
         return ResponseEntity.ok(response);
